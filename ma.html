@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Quiz for Kids</title>
+<style>
+    body {
+        background-color: #e380dd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .question-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Adjusted to display 3 questions per row */
+        gap: 20px;
+        padding: 10px; /* Added padding for spacing */
+    }
+    .question {
+        width: 100%; /* Adjusted to fill the grid column */
+        padding: 20px;
+        background-color: #e0e0e0;
+        border-radius: 10px;
+        text-align: center;
+        overflow-wrap: break-word; /* Added to wrap long content */
+    }
+    .option-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .option {
+        width: 100px;
+        padding: 10px;
+        background-color: #fcfacc;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        margin-left: 15px;
+    }
+    .option.selected {
+        background-color: #4CAF50;
+    }
+    .option:hover {
+        background-color: #cccccc;
+    }
+    .option input[type="radio"] {
+        display: none;
+    }
+    .option-label {
+        display: inline-block;
+    }
+    .answer-container {
+        display: flex;
+        justify-content: center;
+    }
+    .submit-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<form id="quizForm">
+  <div class="question-container">
+    <!-- Question 1 -->
+    <div class="question" style="background-color: #ff9999;">
+        <p>How many corners does a square have?</p>
+        <div class="option-container">
+          <label class="option q1" for="q1a">
+            <input type="radio" name="q1" value="A" id="q1a">
+            <span class="option-label">2</span>
+          </label>
+          <label class="option q1" for="q1b">
+            <input type="radio" name="q1" value="B" id="q1b">
+            <span class="option-label">3</span>
+          </label>
+          <label class="option q1" for="q1c">
+            <input type="radio" name="q1" value="C" id="q1c">
+            <span class="option-label">4</span>
+          </label>
+          <label class="option q1" for="q1d">
+            <input type="radio" name="q1" value="D" id="q1d">
+            <span class="option-label">5</span>
+          </label>
+        </div>
+      </div>
+  
+      <!-- Question 2 -->
+      <div class="question" style="background-color: #66cccc;">
+        <p>How many legs does a cat have?</p>
+        <div class="option-container">
+          <label class="option q2" for="q2a">
+            <input type="radio" name="q2" value="A" id="q2a">
+            <span class="option-label">2</span>
+          </label>
+          <label class="option q2" for="q2b">
+            <input type="radio" name="q2" value="B" id="q2b">
+            <span class="option-label">3</span>
+          </label>
+          <label class="option q2" for="q2c">
+            <input type="radio" name="q2" value="C" id="q2c">
+            <span class="option-label">4</span>
+          </label>
+          <label class="option q2" for="q2d">
+            <input type="radio" name="q2" value="D" id="q2d">
+            <span class="option-label">5</span>
+          </label>
+        </div>
+      </div>
+  
+      <!-- Question 3 -->
+      <div class="question" style="background-color: #ffcc99;">
+        <p>How many seasons are there in a year?</p>
+        <div class="option-container">
+          <label class="option q3" for="q3a">
+            <input type="radio" name="q3" value="A" id="q3a">
+            <span class="option-label">2</span>
+          </label>
+          <label class="option q3" for="q3b">
+            <input type="radio" name="q3" value="B" id="q3b">
+            <span class="option-label">3</span>
+          </label>
+          <label class="option q3" for="q3c">
+            <input type="radio" name="q3" value="C" id="q3c">
+            <span class="option-label">4</span>
+          </label>
+          <label class="option q3" for="q3d">
+            <input type="radio" name="q3" value="D" id="q3d">
+            <span class="option-label">5</span>
+          </label>
+        </div>
+      </div>
+  
+      <!-- Question 4 -->
+      <div class="question" style="background-color: #99ff99;">
+        <p>How many days are there in a week?</p>
+        <div class="option-container">
+          <label class="option q4" for="q4a">
+            <input type="radio" name="q4" value="A" id="q4a">
+            <span class="option-label">5</span>
+          </label>
+          <label class="option q4" for="q4b">
+            <input type="radio" name="q4" value="B" id="q4b">
+            <span class="option-label">6</span>
+          </label>
+          <label class="option q4" for="q4c">
+            <input type="radio" name="q4" value="C" id="q4c">
+            <span class="option-label">7</span>
+          </label>
+          <label class="option q4" for="q4d">
+            <input type="radio" name="q4" value="D" id="q4d">
+            <span class="option-label">8</span>
+          </label>
+        </div>
+      </div>
+  
+      <!-- Question 5 -->
+      <div class="question" style="background-color: #ccccff;">
+        <p>What is 3 + 5?</p>
+        <div class="option-container">
+          <label class="option q5" for="q5a">
+            <input type="radio" name="q5" value="A" id="q5a">
+            <span class="option-label">6</span>
+          </label>
+          <label class="option q5" for="q5b">
+            <input type="radio" name="q5" value="B" id="q5b">
+            <span class="option-label">7</span>
+          </label>
+          <label class="option q5" for="q5c">
+            <input type="radio" name="q5" value="C" id="q5c">
+            <span class="option-label">8</span>
+          </label>
+          <label class="option q5" for="q5d">
+            <input type="radio" name="q5" value="D" id="q5d">
+            <span class="option-label">9</span>
+          </label>
+        </div>
+      </div>
+  
+      <!-- Question 6 -->
+      <div class="question" style="background-color: #ccffff;">
+        <p>What is 12 - 7?</p>
+        <div class="option-container">
+          <label class="option q6" for="q6a">
+            <input type="radio" name="q6" value="A" id="q6a">
+            <span class="option-label">3</span>
+          </label>
+          <label class="option q6" for="q6b">
+            <input type="radio" name="q6" value="B" id="q6b">
+            <span class="option-label">4</span>
+          </label>
+          <label class="option q6" for="q6c">
+            <input type="radio" name="q6" value="C" id="q6c">
+            <span class="option-label">5</span>
+          </label>
+          <label class="option q6" for="q6d">
+            <input type="radio" name="q6" value="D" id="q6d">
+            <span class="option-label">6</span>
+          </label>
+        </div>
+      </div>
+  
+      <!-- Question 7 -->
+      <div class="question" style="background-color: #ffffcc;">
+        <p>What is 2 x 4?</p>
+        <div class="option-container">
+          <label class="option q7" for="q7a">
+            <input type="radio" name="q7" value="A" id="q7a">
+            <span class="option-label">5</span>
+          </label>
+          <label class="option q7" for="q7b">
+            <input type="radio" name="q7" value="B" id="q7b">
+            <span class="option-label">6</span>
+          </label>
+          <label class="option q7" for="q7c">
+            <input type="radio" name="q7" value="C" id="q7c">
+            <span class="option-label">7</span>
+          </label>
+          <label class="option q7" for="q7d">
+            <input type="radio" name="q7" value="D" id="q7d">
+            <span class="option-label">8</span>
+          </label>
+        </div>
+      </div>
+  
+      <!-- Question 8 -->
+      <div class="question" style="background-color: #ffcccc;">
+        <p>What is 15 / 3?</p>
+        <div class="option-container">
+          <label class="option q8" for="q8a">
+            <input type="radio" name="q8" value="A" id="q8a">
+            <span class="option-label">3</span>
+          </label>
+          <label class="option q8" for="q8b">
+            <input type="radio" name="q8" value="B" id="q8b">
+            <span class="option-label">4</span>
+          </label>
+          <label class="option q8" for="q8c">
+            <input type="radio" name="q8" value="C" id="q8c">
+            <span class="option-label">5</span>
+          </label>
+          <label class="option q8" for="q8d">
+            <input type="radio" name="q8" value="D" id="q8d">
+            <span class="option-label">6</span>
+          </label>
+        </div>
+      </div>
+  
+      <!-- Question 9 -->
+      <div class="question" style="background-color: #ff99cc;">
+        <p>What is 4 squared?</p>
+        <div class="option-container">
+          <label class="option q9" for="q9a">
+            <input type="radio" name="q9" value="A" id="q9a">
+            <span class="option-label">8</span>
+          </label>
+          <label class="option q9" for="q9b">
+            <input type="radio" name="q9" value="B" id="q9b">
+            <span class="option-label">12</span>
+          </label>
+          <label class="option q9" for="q9c">
+            <input type="radio" name="q9" value="C" id="q9c">
+            <span class="option-label">16</span>
+          </label>
+          <label class="option q9" for="q9d">
+            <input type="radio" name="q9" value="D" id="q9d">
+            <span class="option-label">20</span>
+          </label>
+        </div>
+      </div>
+  
+      <!-- Question 10 -->
+      <div class="question" style="background-color: #99ccff;">
+        <p>What is 9 + 6?</p>
+        <div class="option-container">
+          <label class="option q10" for="q10a">
+            <input type="radio" name="q10" value="A" id="q10a">
+            <span class="option-label">13</span>
+          </label>
+          <label class="option q10" for="q10b">
+            <input type="radio" name="q10" value="B" id="q10b">
+            <span class="option-label">14</span>
+          </label>
+          <label class="option q10" for="q10c">
+            <input type="radio" name="q10" value="C" id="q10c">
+            <span class="option-label">15</span>
+          </label>
+          <label class="option q10" for="q10d">
+            <input type="radio" name="q10" value="D" id="q10d">
+            <span class="option-label">16</span>
+          </label>
+        </div>
+      </div>
+  
+      <!-- Question 11 -->
+      <div class="question" style="background-color: #ffccff;">
+        <p>What is 20 - 11?</p>
+        <div class="option-container">
+          <label class="option q11" for="q11a">
+            <input type="radio" name="q11" value="A" id="q11a">
+            <span class="option-label">7</span>
+          </label>
+          <label class="option q11" for="q11b">
+            <input type="radio" name="q11" value="B" id="q11b">
+            <span class="option-label">8</span>
+          </label>
+          <label class="option q11" for="q11c">
+            <input type="radio" name="q11" value="C" id="q11c">
+            <span class="option-label">9</span>
+          </label>
+          <label class="option q11" for="q11d">
+            <input type="radio" name="q11" value="D" id="q11d">
+            <span class="option-label">10</span>
+          </label>
+        </div>
+      </div>
+  
+      <!-- Question 12 -->
+      <div class="question" style="background-color: #ccffcc;">
+        <p>What is 6 x 4?</p>
+        <div class="option-container">
+          <label class="option q12" for="q12a">
+            <input type="radio" name="q12" value="A" id="q12a">
+            <span class="option-label">20</span>
+          </label>
+          <label class="option q12" for="q12b">
+            <input type="radio" name="q12" value="B" id="q12b">
+            <span class="option-label">22</span>
+          </label>
+          <label class="option q12" for="q12c">
+            <input type="radio" name="q12" value="C" id="q12c">
+            <span class="option-label">24</span>
+          </label>
+          <label class="option q12" for="q12d">
+            <input type="radio" name="q12" value="D" id="q12d">
+            <span class="option-label">26</span>
+          </label>
+        </div>
+      </div>
+  
+      <!-- Question 13 -->
+      <div class="question" style="background-color: #cc99ff;">
+        <p>What is 25 / 5?</p>
+        <div class="option-container">
+          <label class="option q13" for="q13a">
+            <input type="radio" name="q13" value="A" id="q13a">
+            <span class="option-label">3</span>
+          </label>
+          <label class="option q13" for="q13b">
+            <input type="radio" name="q13" value="B" id="q13b">
+            <span class="option-label">4</span>
+          </label>
+          <label class="option q13" for="q13c">
+            <input type="radio" name="q13" value="C" id="q13c">
+            <span class="option-label">5</span>
+          </label>
+          <label class="option q13" for="q13d">
+            <input type="radio" name="q13" value="D" id="q13d">
+            <span class="option-label">6</span>
+          </label>
+        </div>
+      </div>
+  
+      <!-- Question 14 -->
+      <div class="question" style="background-color: #ccffff;">
+        <p>What is 3 squared?</p>
+        <div class="option-container">
+          <label class="option q14" for="q14a">
+            <input type="radio" name="q14" value="A" id="q14a">
+            <span class="option-label">6</span>
+          </label>
+          <label class="option q14" for="q14b">
+            <input type="radio" name="q14" value="B" id="q14b">
+            <span class="option-label">7</span>
+          </label>
+          <label class="option q14" for="q14c">
+            <input type="radio" name="q14" value="C" id="q14c">
+            <span class="option-label">8</span>
+          </label>
+          <label class="option q14" for="q14d">
+            <input type="radio" name="q14" value="D" id="q14d">
+            <span class="option-label">9</span>
+          </label>
+        </div>
+      </div>
+  
+      <!-- Question 15 -->
+      <div class="question" style="background-color: #99ffcc; text-align: center;">
+        <p>What is 10 - 3?</p>
+        <div class="option-container">
+          <label class="option q15" for="q15a">
+            <input type="radio" name="q15" value="A" id="q15a">
+            <span class="option-label">5</span>
+          </label>
+          <label class="option q15" for="q15b">
+            <input type="radio" name="q15" value="B" id="q15b">
+            <span class="option-label">6</span>
+          </label>
+          <label class="option q15" for="q15c">
+            <input type="radio" name="q15" value="C" id="q15c">
+            <span class="option-label">7</span>
+          </label>
+          <label class="option q15" for="q15d">
+            <input type="radio" name="q15" value="D" id="q15d">
+            <span class="option-label">8</span>
+          </label>
+        </div>
+      </div>
+  </div>
+  <div class="answer-container">
+    <input type="submit" value="Submit" class="submit-btn">
+  </div>
+</form>
+
+<script>
+document.getElementById("quizForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  // Your logic to calculate the score or check the answers goes here
+  // For simplicity, we'll just alert the user that the form has been submitted
+  alert("Form submitted! Your score will be calculated.");
+});
+
+// JavaScript to handle the option selection
+const options = document.querySelectorAll('.option input[type="radio"]');
+options.forEach(option => {
+    option.addEventListener('click', () => {
+        const selectedOption = option.closest('.option');
+        const questionNumber = selectedOption.classList[1]; // Get the question number class
+        const selectedOptions = document.querySelectorAll(`.${questionNumber}.selected`);
+
+        selectedOptions.forEach(opt => {
+            opt.classList.remove('selected');
+        });
+
+        selectedOption.classList.add('selected');
+    });
+});
+</script>
+
+</body>
+</html>

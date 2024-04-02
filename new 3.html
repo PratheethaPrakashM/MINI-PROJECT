@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Combined Page</title>
+  <style>
+    /* Styles for the whole page */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Styles for the welcome section */
+    .welcome-section {
+      background-image: url("file:///C:/Users/91974/Downloads/dd.jpg");
+      background-attachment: fixed;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    /* Styles for the welcome text */
+    .welcome-text {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    /* Styles for the sub text */
+    .sub-text {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Styles for the box section */
+    .box-section {
+      background-color: #f0f0f0;
+      padding: 50px 0;
+    }
+
+    /* Styles for the box container */
+    .box-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* Styles for the individual boxes */
+    .box {
+      width: 300px;
+      height: 300px;
+      margin: 20px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    /* Styles for the box images */
+    .box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Styles for the box overlays */
+    .box-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      font-size: 24px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    /* Hover effect for box overlays */
+    .box:hover .box-overlay {
+      opacity: 1;
+    }
+
+    /* Styles for box overlay links */
+    .box-overlay a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Welcome Section -->
+  <div class="welcome-section">
+    <div class="welcome-text">WELCOME TO INTELLILEARN</div>
+    <div class="sub-text">Unlock the potential of your child with IntelliLearn</div>
+  </div>
+
+  <!-- Box Section -->
+  <div class="box-section">
+    <div class="box-container">
+      <div class="box">
+        <img src="C:\Users\91974\OneDrive\Documents\maths.jpg" alt="Mathematics">
+        <div class="box-overlay"><a href="mathematics.html">MATHEMATICS</a></div>
+      </div>
+      <div class="box">
+        <img src="C:\Users\91974\OneDrive\Documents\reading.jpg" alt="Reading">
+        <div class="box-overlay"><a href="reading.html">READING</a></div>
+      </div>
+      <div class="box">
+        <img src="C:\Users\91974\OneDrive\Documents\memoryy.jpg" alt="Memory">
+        <div class="box-overlay"><a href="memory.html">MEMORY</a></div>
+      </div>
+      <div class="box">
+        <img src="C:\Users\91974\OneDrive\Documents\iq.png" alt="IQ">
+        <div class="box-overlay"><a href="iq.html">IQ</a></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
